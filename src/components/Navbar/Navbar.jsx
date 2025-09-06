@@ -1,33 +1,53 @@
-import React, {useState} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import './Navbar.css'
 import logo from '../../assets/images/logo.png'
 import { IoSearch, IoSend, IoClose } from "react-icons/io5";
 import Button from '../Button/Button'
 
 const Navbar = () => {
-  const [isSearchOpen, setIsSearchOpen] = useState(false)
-  const [searchQuery, setSearchQuery] = useState('')
+  // const [isSearchOpen, setIsSearchOpen] = useState(false)
+  // const [searchQuery, setSearchQuery] = useState('')
+  // const searchRef = useRef(null)
 
-  const handleSearchToggle = () => {
-    setIsSearchOpen(!isSearchOpen)
-    if (isSearchOpen) {
-      setSearchQuery('')
-    }
-  }
+  // const handleSearchToggle = (e) => {
+  //   e.stopPropagation()
+  //   setIsSearchOpen(!isSearchOpen)
+  //   if (isSearchOpen) {
+  //     setSearchQuery('')
+  //   }
+  // }
 
-  const handleSearchSubmit = (e) => {
-    e.preventDefault()
-    if (searchQuery.trim()) {
-      console.log('Search query:', searchQuery)
-      // Handle search logic here
-      setSearchQuery('')
-      setIsSearchOpen(false)
-    }
-  }
+  // const handleSearchSubmit = (e) => {
+  //   e.preventDefault()
+  //   if (searchQuery.trim()) {
+  //     console.log('Search query:', searchQuery)
+  //     // Handle search logic here
+  //     setSearchQuery('')
+  //     setIsSearchOpen(false)
+  //   }
+  // }
 
-  const handleInputChange = (e) => {
-    setSearchQuery(e.target.value)
-  }
+  // const handleInputChange = (e) => {
+  //   setSearchQuery(e.target.value)
+  // }
+
+  // // Close search when clicking outside
+  // useEffect(() => {
+  //   const handleClickOutside = (event) => {
+  //     if (searchRef.current && !searchRef.current.contains(event.target)) {
+  //       setIsSearchOpen(false)
+  //       setSearchQuery('')
+  //     }
+  //   }
+
+  //   if (isSearchOpen) {
+  //     document.addEventListener('mousedown', handleClickOutside)
+  //   }
+
+  //   return () => {
+  //     document.removeEventListener('mousedown', handleClickOutside)
+  //   }
+  // }, [isSearchOpen])
 
   return (
     <div className='navbar'>
@@ -42,18 +62,18 @@ const Navbar = () => {
             <a href="">Home</a>
             <a href="">
               Discover 
-              <IoSearch 
+              <IoSearch className='navSearch'/>
+              {/* <IoSearch 
                 className={`navSearch ${isSearchOpen ? 'active' : ''}`}
                 onClick={handleSearchToggle}
-              />
+              /> */}
             </a>
             <a href="">Properties</a>
             <a href="">Hosts</a>
         </div>
 
         
-      {/* Simple Search Input */}
-          <div 
+          {/* <div 
             ref={searchRef}
             className={`search-dropdown ${isSearchOpen ? 'open' : ''}`}
           >
@@ -77,8 +97,7 @@ const Navbar = () => {
                 </button>
               </div>
             </form>
-          </div>
-
+          </div>     */}
 
         <div className='navBtn'>
             <button className='navBtnBtn'>Log In</button>
