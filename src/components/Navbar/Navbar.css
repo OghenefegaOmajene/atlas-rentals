@@ -1,0 +1,60 @@
+.navbar{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 10;
+    position: absolute;
+    background-color: transparent;
+    /* border: 1px solid white; */
+}
+.navLogo{
+    height: 100%;
+    width: 15%;
+    /* background-color: blanchedalmond; */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.navLogo h3{
+    color: white;
+}
+.navLogo img{
+    width: 50px;
+    height: 80%;
+}
+
+.navLinks{
+    width: 40%;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navLinks a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.navBtn{
+    width: 20%;
+    height: 100%;
+    /* background-color: aquamarine; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.navBtnBtn{
+    border-radius: 8px;
+    padding: 10px 8px;
+    width: 94px;
+    border: 1px solid rgba(111, 24, 132, 0.07);
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+
