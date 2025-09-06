@@ -51,28 +51,22 @@ const Navbar = () => {
             <a href="">Hosts</a>
         </div>
 
-        <div className={`search-container ${isSearchOpen ? 'open' : ''}`}>
-          <div className="search-backdrop" onClick={handleSearchToggle}></div>
-          <div className="search-interface">
-            <div className="search-header">
-              <div className="ai-indicator">
-                <div className="ai-dot"></div>
-                <span>AI Assistant</span>
-              </div>
-              <button className="close-search" onClick={handleSearchToggle}>
-                <IoClose />
-              </button>
-            </div>
-            
+        
+      {/* Simple Search Input */}
+          <div 
+            ref={searchRef}
+            className={`search-dropdown ${isSearchOpen ? 'open' : ''}`}
+          >
             <form onSubmit={handleSearchSubmit} className="search-form">
               <div className="search-input-container">
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={handleInputChange}
-                  placeholder="Ask me anything about properties..."
+                  placeholder="Search properties..."
                   className="search-input"
                   autoFocus={isSearchOpen}
+                  onClick={(e) => e.stopPropagation()}
                 />
                 <button 
                   type="submit" 
@@ -83,23 +77,8 @@ const Navbar = () => {
                 </button>
               </div>
             </form>
-            
-            <div className="search-suggestions">
-              <span className="suggestion-label">Try asking:</span>
-              <div className="suggestions">
-                <button onClick={() => setSearchQuery("Show me luxury apartments")}>
-                  "Show me luxury apartments"
-                </button>
-                <button onClick={() => setSearchQuery("Properties near downtown")}>
-                  "Properties near downtown"
-                </button>
-                <button onClick={() => setSearchQuery("What's available this weekend?")}>
-                  "What's available this weekend?"
-                </button>
-              </div>
-            </div>
           </div>
-        </div>
+
 
         <div className='navBtn'>
             <button className='navBtnBtn'>Log In</button>
