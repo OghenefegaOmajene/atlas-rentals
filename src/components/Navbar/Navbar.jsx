@@ -1,7 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react'
 import './Navbar.css'
 import logo from '../../assets/images/logo.png'
-import { IoSearch, IoSend, IoClose } from "react-icons/io5";
+import { IoSearch } from "react-icons/io5";
 import Button from '../Button/Button'
 
 const Navbar = () => {

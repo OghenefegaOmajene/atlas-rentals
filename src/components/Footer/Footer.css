@@ -10,17 +10,17 @@
     border-top: 1px solid rgb(255, 255, 255, 0.2);
 }
 .footerLogoBox{
-    height: 100%;
+    height: 80%;
     width: 20%;
-    /* background-color: blanchedalmond; */
+    /* background-color: rgb(78, 78, 78); */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* gap: 10px; */
+    gap: 15px;
 }
 .footerLogo{
-    height: 80px;
+    height: 60px;
     width: 100%;
     /* background-color: rgb(236, 205, 255); */
     display: flex;
@@ -31,7 +31,7 @@
     color: white;
 }
 .footerLogo img{
-    width: 60px;
+    width: 50px;
     height: 80%;
 }
 
