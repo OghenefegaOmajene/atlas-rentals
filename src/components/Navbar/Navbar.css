@@ -3,10 +3,11 @@
     height: 70px;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     z-index: 10;
     position: absolute;
-    background-color: transparent;
-    /* border: 1px solid white; */
+    cursor: pointer;
+    /* background-color: rebeccapurple; */
 }
 .navLogo{
     height: 100%;
@@ -14,19 +15,26 @@
     /* background-color: blanchedalmond; */
     display: flex;
     align-items: center;
-    gap: 10px;
 }
 .navLogo h3{
     color: #424242;
 }
 .navLogo img{
     width: 50px;
-    height: 80%;
+    height: 70%;
 }
 
 .navLinks{
-    width: 40%;
-    /* background-color: aqua; */
+    width: 30%;
+    height: 80%;
+    border-radius: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.132);
+    /* box-shadow: 0px 2px 21px -1px rgba(49,49,49,0.69);
+    -webkit-box-shadow: 0px 2px 21px -1px rgba(49,49,49,0.69);
+    -moz-box-shadow: 0px 2px 21px -1px rgba(49,49,49,0.69); */
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,10 +56,10 @@
 }
 
 .navBtnBtn{
-    border-radius: 8px;
+    border-radius: 50px;
     padding: 10px 8px;
     width: 94px;
-    border: 1px solid rgba(111, 24, 132, 0.07);
+    border: 1px solid rgba(0, 0, 0, 0.132);
     background: transparent;
     color: #424242;
     cursor: pointer;
