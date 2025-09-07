@@ -9,19 +9,24 @@
     grid-row-gap: 10px;
 }
 
+.bento1, .bento2, .bento3, .bento4{
+    border-radius: 25px;
+} 
 .bento1 { 
     grid-area: 1 / 1 / 2 / 2; 
+    background-color: orangered;
 }
 .bento2 { 
     background-color: aquamarine;
     grid-area: 1 / 2 / 2 / 3; 
-    border-radius: 25px;
 }
 .bento3 { 
     grid-area: 2 / 1 / 3 / 2; 
+    background-color: palevioletred;
 }
 .bento4 { 
     grid-area: 2 / 2 / 3 / 3; 
+    background-color: coral;
 }
 
 
