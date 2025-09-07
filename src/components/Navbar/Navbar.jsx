@@ -1,90 +1,100 @@
 import React, { useState, useRef, useEffect } from "react";
-import "./Navbar.css";
-import logo from "../../assets/images/logo.png";
 import { IoSearch } from "react-icons/io5";
-import { IoSend } from "react-icons/io5";
+import { IoMdClose } from "react-icons/io";
+import { FaMicrophone } from "react-icons/fa";
+import { IoIosArrowUp } from "react-icons/io";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const [query, setQuery] = useState("");
+  const searchRef = useRef(null);
 
-  const inputRef = useRef(null);
-
-  // Auto-focus when search opens
+  // Close on outside click
   useEffect(() => {
-    if (showSearch && inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, [showSearch]);
-
-  const handleSearchClick = () => {
-    setShowSearch(!showSearch);
-    setExpanded(false);
-    setQuery("");
-  };
-
-  const handleInputChange = (e) => {
-    setQuery(e.target.value);
-    if (e.target.value.length > 0) {
-      setExpanded(true);
-    } else {
-      setExpanded(false);
-    }
-  };
-
-  const handleSend = () => {
-    if (!query.trim()) return;
-    console.log("Searching / Sending Query:", query);
-    // send to backend or handle AI logic
-    setQuery("");
-    setExpanded(false);
-    setShowSearch(false);
-  };
+    const handleClickOutside = (e) => {
+      if (searchRef.current && !searchRef.current.contains(e.target)) {
+        setShowSearch(false);
+        setExpanded(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <div className="navbar">
-      <div className="navLogo">
-        <img src={logo} alt="" />
-        <h3>tlas Rentals</h3>
-      </div>
+      <h2 className="logo">Atlas Rentals</h2>
 
       <div className="navLinks">
         <a href="">Home</a>
-        <a href="">
+        <a href="" onClick={(e) => e.preventDefault()}>
           Discover
-          <IoSearch className="navSearch" onClick={handleSearchClick} />
+          <IoSearch
+            className="navSearch"
+            onClick={() => setShowSearch(!showSearch)}
+          />
         </a>
         <a href="">Properties</a>
         <a href="">Hosts</a>
       </div>
 
-      <div className="navBtn">
-        <button className="navBtnBtn">Log In</button>
-        <h4>Become a host</h4>
-      </div>
-
-      {/* Chatbot-style Search */}
       {showSearch && (
-        <div className={`searchContainer ${expanded ? "expanded" : ""}`}>
-          <input
-            ref={inputRef}
-            type="text"
-            placeholder="Type your search..."
-            value={query}
-            onChange={handleInputChange}
-            className="searchInput"
-          />
-          <button className="sendBtn" onClick={handleSend}>
-            <IoSend />
-          </button>
+        <div
+          ref={searchRef}
+          className={`searchBox ${expanded ? "expanded" : "bouncy"}`}
+        >
+          {/* Top filters */}
+          {expanded && (
+            <div className="searchFilters">
+              <button className="active">Rent</button>
+              <button>Buy</button>
+              <div className="filters">
+                <span>Location ▼</span>
+                <span>Bedrooms ▼</span>
+                <span>Price ▼</span>
+              </div>
+              <IoMdClose
+                className="closeBtn"
+                onClick={() => {
+                  setShowSearch(false);
+                  setExpanded(false);
+                }}
+              />
+            </div>
+          )}
+
+          {/* Input field */}
+          <div className="searchInputWrapper">
+            <input
+              type="text"
+              className="searchInput"
+              placeholder="Ask AI to find your perfect home..."
+              onFocus={() => setExpanded(true)}
+            />
+            {expanded && (
+              <div className="searchActions">
+                <span className="rating">+ 4.1 ▼</span>
+                <FaMicrophone />
+                <button className="sendBtn">
+                  <IoIosArrowUp />
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       )}
+
+      <div className='navBtn'>
+        <button className='navBtnBtn'>Log In</button>
+        <h4>Become a host</h4>
+      </div>
     </div>
   );
 };
 
 export default Navbar;
+
 
 // import React, {useState, useRef, useEffect} from 'react'
 // import './Navbar.css'
