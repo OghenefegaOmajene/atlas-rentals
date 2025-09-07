@@ -1,8 +1,12 @@
 import React from 'react'
+import './PropertySearch.css'
+import Sidebar from '../../components/Sidebar/Sidebar'
 
 const PropertySearch = () => {
   return (
-    <div>PropertySearch</div>
+    <div className='properties'>
+        <Sidebar/>
+    </div>
   )
 }
 
