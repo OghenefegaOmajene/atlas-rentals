@@ -1,112 +1,124 @@
-import React, {useState, useRef, useEffect} from 'react'
-import './Navbar.css'
-import logo from '../../assets/images/logo.png'
+import React, { useState, useRef, useEffect } from "react";
+import "./Navbar.css";
+import logo from "../../assets/images/logo.png";
 import { IoSearch } from "react-icons/io5";
-import Button from '../Button/Button'
+import { IoSend } from "react-icons/io5";
 
 const Navbar = () => {
-  // const [isSearchOpen, setIsSearchOpen] = useState(false)
-  // const [searchQuery, setSearchQuery] = useState('')
-  // const searchRef = useRef(null)
+  const [showSearch, setShowSearch] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const [query, setQuery] = useState("");
 
-  // const handleSearchToggle = (e) => {
-  //   e.stopPropagation()
-  //   setIsSearchOpen(!isSearchOpen)
-  //   if (isSearchOpen) {
-  //     setSearchQuery('')
-  //   }
-  // }
+  const inputRef = useRef(null);
 
-  // const handleSearchSubmit = (e) => {
-  //   e.preventDefault()
-  //   if (searchQuery.trim()) {
-  //     console.log('Search query:', searchQuery)
-  //     // Handle search logic here
-  //     setSearchQuery('')
-  //     setIsSearchOpen(false)
-  //   }
-  // }
+  // Auto-focus when search opens
+  useEffect(() => {
+    if (showSearch && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [showSearch]);
 
-  // const handleInputChange = (e) => {
-  //   setSearchQuery(e.target.value)
-  // }
+  const handleSearchClick = () => {
+    setShowSearch(!showSearch);
+    setExpanded(false);
+    setQuery("");
+  };
 
-  // // Close search when clicking outside
-  // useEffect(() => {
-  //   const handleClickOutside = (event) => {
-  //     if (searchRef.current && !searchRef.current.contains(event.target)) {
-  //       setIsSearchOpen(false)
-  //       setSearchQuery('')
-  //     }
-  //   }
+  const handleInputChange = (e) => {
+    setQuery(e.target.value);
+    if (e.target.value.length > 0) {
+      setExpanded(true);
+    } else {
+      setExpanded(false);
+    }
+  };
 
-  //   if (isSearchOpen) {
-  //     document.addEventListener('mousedown', handleClickOutside)
-  //   }
-
-  //   return () => {
-  //     document.removeEventListener('mousedown', handleClickOutside)
-  //   }
-  // }, [isSearchOpen])
+  const handleSend = () => {
+    if (!query.trim()) return;
+    console.log("Searching / Sending Query:", query);
+    // send to backend or handle AI logic
+    setQuery("");
+    setExpanded(false);
+    setShowSearch(false);
+  };
 
   return (
-    <div className='navbar'>
-      
-        <div className='navLogo'>
-            <img src={logo} alt="" />
-            <h3>tlas Rentals</h3>
+    <div className="navbar">
+      <div className="navLogo">
+        <img src={logo} alt="" />
+        <h3>tlas Rentals</h3>
+      </div>
+
+      <div className="navLinks">
+        <a href="">Home</a>
+        <a href="">
+          Discover
+          <IoSearch className="navSearch" onClick={handleSearchClick} />
+        </a>
+        <a href="">Properties</a>
+        <a href="">Hosts</a>
+      </div>
+
+      <div className="navBtn">
+        <button className="navBtnBtn">Log In</button>
+        <h4>Become a host</h4>
+      </div>
+
+      {/* Chatbot-style Search */}
+      {showSearch && (
+        <div className={`searchContainer ${expanded ? "expanded" : ""}`}>
+          <input
+            ref={inputRef}
+            type="text"
+            placeholder="Type your search..."
+            value={query}
+            onChange={handleInputChange}
+            className="searchInput"
+          />
+          <button className="sendBtn" onClick={handleSend}>
+            <IoSend />
+          </button>
         </div>
+      )}
+    </div>
+  );
+};
+
+export default Navbar;
+
+// import React, {useState, useRef, useEffect} from 'react'
+// import './Navbar.css'
+// import logo from '../../assets/images/logo.png'
+// import { IoSearch } from "react-icons/io5";
+
+// const Navbar = () => {
+  
+//   return (
+//     <div className='navbar'>
+      
+//         <div className='navLogo'>
+//             <img src={logo} alt="" />
+//             <h3>tlas Rentals</h3>
+//         </div>
             
 
-        <div className='navLinks'>
-            <a href="">Home</a>
-            <a href="">
-              Discover 
-              <IoSearch className='navSearch'/>
-              {/* <IoSearch 
-                className={`navSearch ${isSearchOpen ? 'active' : ''}`}
-                onClick={handleSearchToggle}
-              /> */}
-            </a>
-            <a href="">Properties</a>
-            <a href="">Hosts</a>
-        </div>
+//         <div className='navLinks'>
+//             <a href="">Home</a>
+//             <a href="">
+//               Discover 
+//               <IoSearch className='navSearch'/>
+//             </a>
+//             <a href="">Properties</a>
+//             <a href="">Hosts</a>
+//         </div>
 
-        
-          {/* <div 
-            ref={searchRef}
-            className={`search-dropdown ${isSearchOpen ? 'open' : ''}`}
-          >
-            <form onSubmit={handleSearchSubmit} className="search-form">
-              <div className="search-input-container">
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={handleInputChange}
-                  placeholder="Search properties..."
-                  className="search-input"
-                  autoFocus={isSearchOpen}
-                  onClick={(e) => e.stopPropagation()}
-                />
-                <button 
-                  type="submit" 
-                  className={`search-send-btn ${searchQuery.trim() ? 'active' : ''}`}
-                  disabled={!searchQuery.trim()}
-                >
-                  <IoSend />
-                </button>
-              </div>
-            </form>
-          </div>     */}
+//         <div className='navBtn'>
+//             <button className='navBtnBtn'>Log In</button>
+//             <h4>Become a host</h4>
+//         </div>
 
-        <div className='navBtn'>
-            <button className='navBtnBtn'>Log In</button>
-            <h4>Become a host</h4>
-            {/* <Button width="150px" height="38px" title="Sign Up"/> */}
-        </div>
+//     </div>
+//   )
+// }
 
-    </div>
-  )
-}
-
-export default Navbar
+// export default Navbar
