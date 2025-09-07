@@ -1,0 +1,53 @@
+.bento {
+    width: 90%;
+    height: 500px;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.bento1 { 
+    grid-area: 1 / 1 / 2 / 2; 
+}
+.bento2 { 
+    background-color: aquamarine;
+    grid-area: 1 / 2 / 2 / 3; 
+    border-radius: 25px;
+}
+.bento3 { 
+    grid-area: 2 / 1 / 3 / 2; 
+}
+.bento4 { 
+    grid-area: 2 / 2 / 3 / 3; 
+}
+
+
+.bentoTxt{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+.bentoTxtHead{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 45px;
+}
+.bentoTxt h3{
+    color: #3F3F3F;
+    font-size: 30px;
+}
+.bentoTxt p{
+    color: #727272;
+    font-size: 18px;
+}
+
+.bentoTxtImg{
+    width: 25px;
+    height: 30px;
+}

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { IoSearch } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
+import logo from '../../assets/images/logo.png'
 import { FaMicrophone } from "react-icons/fa";
 import { IoIosArrowUp } from "react-icons/io";
 import "./Navbar.css";
@@ -24,7 +25,10 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <h2 className="logo">Atlas Rentals</h2>
+      <div className='navLogo'>
+        <img src={logo} alt="" />
+        <h3>tlas Rentals</h3>
+      </div>
 
       <div className="navLinks">
         <a href="">Home</a>
