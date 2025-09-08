@@ -211,11 +211,23 @@
     display: flex;
     width: 95%;
     height: 80%;
+    /* border: 1px solid black; */
     justify-content: space-around;
     align-items: center;
     /* background-color: #95CAFF; */
 }
-.bento3Content img{
-    width: 30%;
-    height: 80px;
+
+
+.wave{
+    width: 238px;
+    height: 89px;
+}
+.mic{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+}
+.pills{
+    width: 300px;
+    height: 39px;
 }

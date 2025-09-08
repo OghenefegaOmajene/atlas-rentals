@@ -88,9 +88,9 @@ const Bento = () => {
 
         <div className='bento3'>
           <div className="bento3Content">
-            <img src={wave} alt="" />
-            <img src={mic} alt="" />
-            <img src={pills} alt="" /> 
+            <img src={wave} alt="" className='wave'/>
+            <img src={mic} alt="" className='mic'/>
+            <img src={pills} alt="" className='pills'/> 
           </div>
 
           <div className="bentoTxt">
