@@ -5,6 +5,7 @@ import logo from '../../assets/images/logo.png'
 import { FaMicrophone } from "react-icons/fa";
 import { IoIosArrowUp } from "react-icons/io";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [showSearch, setShowSearch] = useState(false);
@@ -39,7 +40,7 @@ const Navbar = () => {
             onClick={() => setShowSearch(!showSearch)}
           />
         </a>
-        <a href="">Properties</a>
+        <Link to="/PropertySearch">Properties</Link>
         <a href="">Hosts</a>
       </div>
 
@@ -51,8 +52,11 @@ const Navbar = () => {
           {/* Top filters */}
           {expanded && (
             <div className="searchFilters">
-              <button className="active">Rent</button>
-              <button>Buy</button>
+              <div className="rentBuyBtns">
+                <button className="active">Rent</button>
+                <button>Buy</button>
+              </div>
+
               <div className="filters">
                 <span>Location ▼</span>
                 <span>Bedrooms ▼</span>

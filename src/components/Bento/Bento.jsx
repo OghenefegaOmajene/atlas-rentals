@@ -20,6 +20,10 @@ const Bento = () => {
         </div>
 
         <div className='bento2'>
+          <div className="bentoContents">
+            
+          </div>
+
           <div className="bentoTxt">
             <div className="bentoTxtHead">
               <img src={fileSearch} alt="" className='bentoTxtImg'/>
