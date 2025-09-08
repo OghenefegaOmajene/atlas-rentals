@@ -25,7 +25,7 @@ const Bento = () => {
 
         <div className='bento2'>
           <div className="bentoContents">
-            <div className="searchBox">
+            <div className="bentoContent1">
               <div className="find">
                 <img src={search} alt="" />
                 <p>I want finding...</p>
