@@ -7,6 +7,7 @@ import graphUp from '../../assets/images/graphUp.png'
 import search from '../../assets/images/search.png'
 import gmail from '../../assets/images/gmail.png'
 import slack from '../../assets/images/slack.png'
+import notion from '../../assets/images/notion.png'
 
 const Bento = () => {
   return (
@@ -58,15 +59,15 @@ const Bento = () => {
 
               <div className="platform">
                 <section>
-                  <img src={gmail} alt="" />
+                  <img src={notion} alt="" />
                 
                   <div className="platformTxt">
-                    <h3>Q2 Report</h3>
-                    <p>Quarterly planning email</p>
+                    <h3>Q4 Timeline</h3>
+                    <p>Project Timeline</p>
                   </div>
                 </section>
 
-                <button>PDF</button>
+                <button>ZIP</button>
               </div>
             </div>
           </div>
