@@ -15,7 +15,7 @@ const MapWithListings = () => {
   useEffect(() => {
     const map = new maplibregl.Map({
       container: mapContainer.current,
-      style: `https://api.maptiler.com/maps/dark/style.json?key=YOUR_MAPTILER_API_KEY`,
+      style: `https://api.maptiler.com/maps/darkmatter/style.json?key=OmmTrfL0eYXNOPhY9vvq`,
       center: [-122.4194, 37.7749],
       zoom: 11,
     });
