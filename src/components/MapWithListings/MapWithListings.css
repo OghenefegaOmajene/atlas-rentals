@@ -1,5 +1,6 @@
 .map-layout {
   display: flex;
+  width: 80%;
   height: 100vh;
   font-family: sans-serif;
 }
