@@ -104,6 +104,14 @@ const Bento = () => {
         </div>
 
         <div className='bento4'>
+          <div className="bento4Content">
+            <div className="bento4chat">
+              <div className="bento4chatTop">
+                
+              </div>
+            </div>
+          </div>
+
           <div className="bentoTxt">
             <div className="bentoTxtHead">
               <img src={eye} alt="" className='bentoTxtImg'/>
