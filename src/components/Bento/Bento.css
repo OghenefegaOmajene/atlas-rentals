@@ -15,7 +15,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
 } 
 .bento1 { 
     grid-area: 1 / 1 / 2 / 2; 
@@ -198,4 +198,24 @@
     width: 46px;
     height: 46px;
     /* border: 1px solid black; */
+}
+
+
+
+
+.bento3Content{
+    /* width: 100%;
+    height: 100%;
+    background-color: coral;
+    border-radius: 12px; */
+    display: flex;
+    width: 95%;
+    height: 80%;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: #95CAFF; */
+}
+.bento3Content img{
+    width: 30%;
+    height: 80px;
 }
