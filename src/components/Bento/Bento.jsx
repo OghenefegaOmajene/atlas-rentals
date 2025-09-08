@@ -4,6 +4,9 @@ import fileSearch from '../../assets/images/fileSearch.png'
 import eye from '../../assets/images/eye.png'
 import voicePrompt from '../../assets/images/voicePrompt.png'
 import graphUp from '../../assets/images/graphUp.png'
+import search from '../../assets/images/search.png'
+import gmail from '../../assets/images/gmail.png'
+import slack from '../../assets/images/slack.png'
 
 const Bento = () => {
   return (
@@ -21,7 +24,51 @@ const Bento = () => {
 
         <div className='bento2'>
           <div className="bentoContents">
-            
+            <div className="searchBox">
+              <div className="find">
+                <img src={search} alt="" />
+                <p>I want finding...</p>
+              </div>
+
+              <div className="platform">
+                <section>
+                  <img src={gmail} alt="" />
+                
+                  <div className="platformTxt">
+                    <h3>Q2 Report</h3>
+                    <p>Quarterly planning email</p>
+                  </div>
+                </section>
+
+                <button>PDF</button>
+              </div>
+
+              <div className="platform">
+                <section>
+                  <img src={slack} alt="" />
+                
+                  <div className="platformTxt">
+                    <h3>User Research Notes</h3>
+                    <p>Interview insights</p>
+                  </div>
+                </section>
+
+                <button>TXT</button>
+              </div>
+
+              <div className="platform">
+                <section>
+                  <img src={gmail} alt="" />
+                
+                  <div className="platformTxt">
+                    <h3>Q2 Report</h3>
+                    <p>Quarterly planning email</p>
+                  </div>
+                </section>
+
+                <button>PDF</button>
+              </div>
+            </div>
           </div>
 
           <div className="bentoTxt">
