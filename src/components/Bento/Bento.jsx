@@ -9,6 +9,10 @@ import gmail from '../../assets/images/gmail.png'
 import slack from '../../assets/images/slack.png'
 import notion from '../../assets/images/notion.png'
 
+import wave from '../../assets/images/wave.png'
+import mic from '../../assets/images/mic.png'
+import pills from '../../assets/images/pills.png'
+
 const Bento = () => {
   return (
     <div className='bento'>
@@ -83,6 +87,12 @@ const Bento = () => {
         </div>
 
         <div className='bento3'>
+          <div className="bento3Content">
+            <img src={wave} alt="" />
+            <img src={mic} alt="" />
+            <img src={pills} alt="" /> 
+          </div>
+
           <div className="bentoTxt">
             <div className="bentoTxtHead">
               <img src={voicePrompt} alt="" className='bentoTxtImg'/>
