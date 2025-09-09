@@ -88,9 +88,9 @@ const Bento = () => {
 
         <div className='bento3'>
           <div className="bento3Content">
-            <img src={wave} alt="" />
-            <img src={mic} alt="" />
-            <img src={pills} alt="" /> 
+            <img src={wave} alt="" className='wave'/>
+            <img src={mic} alt="" className='mic'/>
+            <img src={pills} alt="" className='pills'/> 
           </div>
 
           <div className="bentoTxt">
@@ -104,6 +104,14 @@ const Bento = () => {
         </div>
 
         <div className='bento4'>
+          <div className="bento4Content">
+            <div className="bento4chat">
+              <div className="bento4chatTop">
+                
+              </div>
+            </div>
+          </div>
+
           <div className="bentoTxt">
             <div className="bentoTxtHead">
               <img src={eye} alt="" className='bentoTxtImg'/>
