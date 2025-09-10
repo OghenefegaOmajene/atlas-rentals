@@ -243,7 +243,7 @@
   height: 80%;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
   /* Inner background */
   background: radial-gradient(
@@ -270,4 +270,104 @@
     rgba(213, 233, 255, 0) 50%,
     rgba(213, 233, 255, 0.2) 100%
   );
+}
+
+.bento4chat{
+    width: 90%;
+    height: 70%;
+    background-color: #FEFFFF;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bento4chattop{
+    width: 95%;
+    height: 20%;
+    background-color: #95CAFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bento4chatleft{
+    width: 60%;
+    height: 100%;
+    gap: 10px;
+    background-color: #214273;
+    display: flex;
+    align-items: center;
+}
+/* .bento4chatleft button{
+    height: 30px;
+    width: 135px;
+    border-radius: 8px;
+    color: #1E5082;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 0;
+} */
+.bento4chatleft span{
+    font-size: 12px;
+    color: rgb(30, 80, 130, 0.5);
+}
+.bento4chatright{
+    color: #72B6FF;
+    font-size: 15px;
+    width: 20%;
+    height: 100%;
+    /* background-color: chocolate; */
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+    align-items: center;
+}
+.textFormatter{
+    width: 168px;
+    height: 60px;
+    position: absolute;
+    z-index: 100;
+    top: 10px;
+    right: 80px;
+}
+
+
+.bento4chatleft button {
+
+  height: 30px;
+    width: 135px;
+    border-radius: 8px;
+    color: #1E5082;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+
+  position: relative;
+  /* display: inline-block; */
+
+  background: #fff; /* Button fill color */
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden; /* needed for inner shadow */
+  border: 2px solid transparent;
+
+  /* Stroke (radial gradient border) */
+  background-image: radial-gradient(circle, #ffffff 19%, #5fabec 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* Inner shadow */
+.bento4chatleft button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
 }
