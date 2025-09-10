@@ -11,6 +11,8 @@ import notion from '../../assets/images/notion.png'
 import wave from '../../assets/images/wave.png'
 import mic from '../../assets/images/mic.png'
 import pills from '../../assets/images/pills.png'
+import textFormatter from '../../assets/images/textFormatter.png'
+import promptSelect from '../../assets/images/promptSelect.png'
 import { IoChevronDown, IoClose } from "react-icons/io5";
 import { FiMaximize2 } from "react-icons/fi";
 
@@ -108,6 +110,7 @@ const Bento = () => {
           <div className="bento4Content">
             <div className="bento4chat">
               <div className="bento4chattop">
+                <img src={textFormatter} alt="" className='textFormatter'/>
                 <div className="bento4chatleft">
                   <button># Announcements <IoChevronDown/></button>
                   <span>/ Create thread</span>
