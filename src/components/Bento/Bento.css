@@ -243,7 +243,7 @@
   height: 80%;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
   /* Inner background */
   background: radial-gradient(
@@ -270,4 +270,47 @@
     rgba(213, 233, 255, 0) 50%,
     rgba(213, 233, 255, 0.2) 100%
   );
+}
+
+.bento4chat{
+    width: 85%;
+    height: 70%;
+    background-color: #FEFFFF;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bento4chattop{
+    width: 90%;
+    height: 20%;
+    background-color: #95CAFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bento4chatleft{
+    width: 60%;
+    height: 100%;
+    gap: 10px;
+    background-color: #214273;
+    display: flex;
+    align-items: center;
+}
+.bento4chatleft button{
+    height: 30px;
+    width: 135px;
+    border-radius: 8px;
+    color: #1E5082;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 0;
+}
+.bento4chatleft span{
+    font-size: 12px;
+    color: rgb(30, 80, 130, 0.5);
 }

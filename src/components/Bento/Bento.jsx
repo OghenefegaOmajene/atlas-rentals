@@ -8,10 +8,11 @@ import search from '../../assets/images/search.png'
 import gmail from '../../assets/images/gmail.png'
 import slack from '../../assets/images/slack.png'
 import notion from '../../assets/images/notion.png'
-
 import wave from '../../assets/images/wave.png'
 import mic from '../../assets/images/mic.png'
 import pills from '../../assets/images/pills.png'
+import { IoChevronDown, IoClose } from "react-icons/io5";
+import { FiMaximize2 } from "react-icons/fi";
 
 const Bento = () => {
   return (
@@ -106,9 +107,22 @@ const Bento = () => {
         <div className='bento4'>
           <div className="bento4Content">
             <div className="bento4chat">
-              <div className="bento4chatTop">
-                
+              <div className="bento4chattop">
+                <div className="bento4chatleft">
+                  <button># Announcements <IoChevronDown/></button>
+                  <span>/ Create thread</span>
+                </div>
+
+                <div className="bento4chatright">
+                  <FiMaximize2/>
+                  <IoClose/>
+                </div>
               </div>
+
+              <div className="bento4chatbottom">
+
+              </div>
+
             </div>
           </div>
 
