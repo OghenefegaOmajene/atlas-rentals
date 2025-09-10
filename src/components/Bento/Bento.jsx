@@ -123,7 +123,15 @@ const Bento = () => {
               </div>
 
               <div className="bento4chatbottom">
+                <img src={promptSelect} alt="" className='promptSelect'/>
+                <section>
+                  <p>New release: custom filters & views</p>
+                  <span>Today we are launching a new feature for all accounts |</span>
+                </section>
 
+                <div>
+                  <button>Create thread</button>
+                </div>
               </div>
 
             </div>

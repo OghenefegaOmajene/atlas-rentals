@@ -280,12 +280,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 6px;
 }
 
 .bento4chattop{
     width: 95%;
     height: 20%;
-    background-color: #95CAFF;
+    /* background-color: #95CAFF; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -295,11 +297,11 @@
     width: 60%;
     height: 100%;
     gap: 10px;
-    background-color: #214273;
+    /* background-color: #214273; */
     display: flex;
     align-items: center;
 }
-/* .bento4chatleft button{
+.bento4chatleft button{
     height: 30px;
     width: 135px;
     border-radius: 8px;
@@ -309,7 +311,7 @@
     justify-content: space-around;
     align-items: center;
     border: 0;
-} */
+}
 .bento4chatleft span{
     font-size: 12px;
     color: rgb(30, 80, 130, 0.5);
@@ -333,41 +335,55 @@
     top: 10px;
     right: 80px;
 }
-
-
-.bento4chatleft button {
-
-  height: 30px;
-    width: 135px;
-    border-radius: 8px;
-    color: #1E5082;
-    font-size: 12px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-
-  position: relative;
-  /* display: inline-block; */
-
-  background: #fff; /* Button fill color */
-  border-radius: 12px;
-  cursor: pointer;
-  overflow: hidden; /* needed for inner shadow */
-  border: 2px solid transparent;
-
-  /* Stroke (radial gradient border) */
-  background-image: radial-gradient(circle, #ffffff 19%, #5fabec 100%);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+.promptSelect{
+    width: 133px;
+    height: 146px;
+    position: absolute;
+    z-index: 100;
+    bottom: 10px;
+    left: 80px;
 }
 
-/* Inner shadow */
-.bento4chatleft button::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 8px;
-  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.25);
-  pointer-events: none;
+.bento4chatbottom{
+    width: 95%;
+    height: 70%;
+    /* background-color: gray; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.bento4chatbottom section{
+    width: 100%;
+    height: 30%;
+    /* background-color: coral; */
+}
+.bento4chatbottom div{
+    width: 100%;
+    height: 30%;
+    /* background-color: coral; */
+    display: flex;
+    justify-content: end;
+}
+.bento4chatbottom section p{
+    color: #1E5082;
+    font-size: 14px;
+}
+.bento4chatbottom section span{
+    color: rgb(31, 80, 130, 0.5);
+    font-size: 12px;
+}
+
+
+.bento4chatbottom div button{
+    color: #2061A8;
+    font-size: 14px;
+    padding: 6px 14px 6px 14px;
+    border-radius: 14px;
+    background: radial-gradient(
+        circle,
+        #C3E1FF 0%,
+        #98CAFF 100%
+    );
+    border: 0;
+    font-weight: bold;
 }
