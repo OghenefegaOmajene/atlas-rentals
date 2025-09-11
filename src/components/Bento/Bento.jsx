@@ -13,13 +13,63 @@ import mic from '../../assets/images/mic.png'
 import pills from '../../assets/images/pills.png'
 import textFormatter from '../../assets/images/textFormatter.png'
 import promptSelect from '../../assets/images/promptSelect.png'
-import { IoChevronDown, IoClose } from "react-icons/io5";
+import waveGraph from '../../assets/images/waveGraph.png'
+import { IoChevronDown, IoClose, IoCheckmark } from "react-icons/io5";
 import { FiMaximize2 } from "react-icons/fi";
+import { FaCheck } from "react-icons/fa";
 
 const Bento = () => {
   return (
     <div className='bento'>
         <div className='bento1'>
+
+          <div className="bento4Content">
+            <div className='bento1head'>
+              <h3>Balance</h3>
+              <p>
+                <FaCheck className='facheck'/>
+                <span>On track</span>
+              </p>
+            </div>
+
+            <div className="bento1tabs">
+              <div className="bento1tab">
+                <div className="bento1tableft">
+                  <p>Saves</p>
+                  <h3>43.50%</h3>
+                </div>
+
+                <div className="bento1tabright">
+                  <button className='greenBtn'>+2.45%</button>
+                </div>
+              </div>
+
+              <div className="bento1tab">
+                <div className="bento1tableft">
+                  <p>Balance</p>
+                  <h3>$52.422</h3>
+                </div>
+
+                <div className="bento1tabright">
+                  <button className='redBtn'>-4.75%</button>
+                </div>
+              </div>
+
+              <div className="bento1tab">
+                <div className="bento1tableft">
+                  <p>Spending</p>
+                  <h3>$1236</h3>
+                </div>
+
+                <div className="bento1tabright">
+                  <button className='purpleBtn'>-3.2%</button>
+                </div>
+              </div>
+            </div>
+
+            <img src={waveGraph} alt="" className='waveGraph'/>
+          </div>
+
           <div className="bentoTxt">
             <div className="bentoTxtHead">
               <img src={graphUp} alt="" className='bentoTxtImg'/>
@@ -28,6 +78,7 @@ const Bento = () => {
             
             <p>Leverage analytics to enhance worklows, boost engagement, and make informed marketing decisions</p>
           </div>
+
         </div>
 
         <div className='bento2'>
@@ -123,7 +174,15 @@ const Bento = () => {
               </div>
 
               <div className="bento4chatbottom">
+                <img src={promptSelect} alt="" className='promptSelect'/>
+                <section>
+                  <p>New release: custom filters & views</p>
+                  <span>Today we are launching a new feature for all accounts |</span>
+                </section>
 
+                <div>
+                  <button>Create thread</button>
+                </div>
               </div>
 
             </div>
