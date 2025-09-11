@@ -6,7 +6,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    grid-row-gap: 30px;
 }
 
 .bento1, .bento2, .bento3, .bento4{
@@ -203,18 +203,40 @@
 
 
 
-.bento3Content{
-    /* width: 100%;
-    height: 100%;
-    background-color: coral;
-    border-radius: 12px; */
-    display: flex;
-    width: 95%;
-    height: 80%;
-    /* border: 1px solid black; */
-    justify-content: space-around;
-    align-items: center;
-    /* background-color: #95CAFF; */
+
+.bento3Content {
+  position: relative;
+  border-radius: 12px;
+  width: 95%;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* Inner background */
+  background: radial-gradient(
+    circle,
+    #F1F8FF 0%,
+    #F3F8FF 38%,
+    #F1F8FF 69%,
+    #F3F8FF 100%
+  );
+}
+
+/* Gradient border on the left */
+.bento3Content::before {
+  content: "";
+  position: absolute;
+  left: 0;                /* stick to the left edge */
+  top: 5%;                /* start 5% from top */
+  bottom: 5%;             /* end 5% from bottom (so it's 90% tall) */
+  width: 4px;             /* thickness of border */
+  border-radius: 12px;    /* match rounded corners */
+  background: radial-gradient(
+    circle,
+    rgba(213, 233, 255, 1) 0%,
+    rgba(213, 233, 255, 0) 50%,
+    rgba(213, 233, 255, 0.2) 100%
+  );
 }
 
 
@@ -224,7 +246,7 @@
 }
 .mic{
     width: 250px;
-    height: 250px;
+    height: 240px;
     position: absolute;
 }
 .pills{
@@ -384,6 +406,100 @@
         #C3E1FF 0%,
         #98CAFF 100%
     );
+    border: 0;
+    font-weight: bold;
+}
+
+.waveGraph{
+    width: 100%;
+}
+.bento1head{
+    width: 95%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* background-color: orange; */
+}
+.bento1head p span{
+    color: #42D6AC;
+    font-size: 18px;
+}
+.bento1head p{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.facheck{
+    background-color: #33FF6D;
+    color: #FFF;
+    font-size: 13px;
+    padding: 3px;
+    border-radius: 50%;
+}
+.bento1tabs{
+    width: 95%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    /* background-color: #42D6AC; */
+}
+.bento1tab{
+    width: 33%;
+    height: 100%;
+    display: flex;
+    padding: 4px;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 23px;
+}
+.bento1tableft{
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 50%;
+    align-items: start;
+    justify-content: space-between;
+    /* background-color: #00000048; */
+}
+.bento1tableft p{
+    color: #B9B9B9;
+    font-size: 16px;
+}
+.bento1tableft h3{
+    color: #000000;
+    font-size: 20px;
+}
+.greenBtn{
+    background-color: rgb(66, 214, 172, 0.12);
+    color: #42D6AC;
+    border-radius: 30px;
+    padding: 5px 7px 5px 7px;
+    width: 71px;
+    height: 30px;
+    border: 0;
+    font-weight: bold;
+}
+.redBtn{
+    background-color:rgb(214, 66, 66, 0.12);
+    color: #D64242;
+    border-radius: 30px;
+    padding: 5px 7px 5px 7px;
+    width: 71px;
+    height: 30px;
+    border: 0;
+    font-weight: bold;
+}
+.purpleBtn{
+    background-color: rgb(67, 84, 214, 0.12);
+    color: #4253D6;
+    border-radius: 30px;
+    padding: 5px 7px 5px 7px;
+    width: 71px;
+    height: 30px;
     border: 0;
     font-weight: bold;
 }
